@@ -8,10 +8,10 @@ public class MecanumDrive {
     private DcMotor FLm, BLm, FRm, BRm;
 
     public void init(HardwareMap hwMap) {
-        FLm = hwMap.get(DcMotor.class, "x"); // replace the variable inside the speech marks into the exact name og the motor name in the driver hub
-        BLm = hwMap.get(DcMotor.class, "x"); // replace the variable inside the speech marks into the exact name og the motor name in the driver hub
-        FRm = hwMap.get(DcMotor.class, "x"); // replace the variable inside the speech marks into the exact name og the motor name in the driver hub
-        BRm = hwMap.get(DcMotor.class, "x"); // replace the variable inside the speech marks into the exact name og the motor name in the driver hub
+        FLm = hwMap.get(DcMotor.class, "FLM"); // replace the variable inside the speech marks into the exact name og the motor name in the driver hub
+        BLm = hwMap.get(DcMotor.class, "BLM"); // replace the variable inside the speech marks into the exact name og the motor name in the driver hub
+        FRm = hwMap.get(DcMotor.class, "FRM"); // replace the variable inside the speech marks into the exact name og the motor name in the driver hub
+        BRm = hwMap.get(DcMotor.class, "BRM"); // replace the variable inside the speech marks into the exact name og the motor name in the driver hub
 
         FLm.setDirection(DcMotor.Direction.REVERSE);
         BLm.setDirection(DcMotor.Direction.REVERSE);
