@@ -1,8 +1,10 @@
-package org.firstinspires.ftc.teamcode.ExampleMechanisms;
+package org.firstinspires.ftc.teamcode.ExampleCode.ExampleMechanisms;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
+@Disabled
 public class Motors {
     private DcMotor motor;
     private double ticksPerRev; // revolution
