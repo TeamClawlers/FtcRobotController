@@ -4,8 +4,6 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class MecanumDrive {
-    private DcMotor FLm, BLm, FRm, BRm;
-
     public void init(HardwareMap hwMap) {
         FLm = hwMap.get(DcMotor.class, "FLM"); // replace the variable inside the speech marks into the exact name og the motor name in the driver hub
         BLm = hwMap.get(DcMotor.class, "BLM"); // replace the variable inside the speech marks into the exact name og the motor name in the driver hub
@@ -20,6 +18,8 @@ public class MecanumDrive {
         FRm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         BRm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
+
+    private DcMotor FLm, BLm, FRm, BRm;
 
     public void drive(double forward, double strafe, double rotate) {
         double FLmPow = forward + strafe + rotate;

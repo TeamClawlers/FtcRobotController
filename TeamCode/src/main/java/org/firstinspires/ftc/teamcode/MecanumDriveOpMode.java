@@ -9,6 +9,7 @@ import org.firstinspires.ftc.teamcode.Mechanisms.MecanumDrive;
 public class MecanumDriveOpMode extends OpMode {
     MecanumDrive drive = new MecanumDrive();
     double forward, strafe, rotate;
+    boolean intake;
 
     @Override
     public void init() {
@@ -20,6 +21,7 @@ public class MecanumDriveOpMode extends OpMode {
         forward = gamepad1.left_stick_y;
         strafe = gamepad1.left_stick_x;
         rotate = gamepad1.right_stick_x;
+        intake = gamepad1.square;
 
         drive.drive(forward,strafe,rotate);
     }
