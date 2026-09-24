@@ -3,13 +3,14 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
+import org.firstinspires.ftc.teamcode.Mechanisms.Intake;
 import org.firstinspires.ftc.teamcode.Mechanisms.MecanumDrive;
 
 @TeleOp
 public class MecanumDriveOpMode extends OpMode {
     MecanumDrive drive = new MecanumDrive();
-    double forward, strafe, rotate;
-    boolean intake;
+    Intake intake = new Intake();
+    double clockwise, forward, strafe, rotate;
 
     @Override
     public void init() {
@@ -21,8 +22,9 @@ public class MecanumDriveOpMode extends OpMode {
         forward = gamepad1.left_stick_y;
         strafe = gamepad1.left_stick_x;
         rotate = gamepad1.right_stick_x;
-        intake = gamepad1.square;
+        clockwise = gamepad2.left_stick_y;
 
+        intake.intake(clockwise);
         drive.drive(forward,strafe,rotate);
     }
 }

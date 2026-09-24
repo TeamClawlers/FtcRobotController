@@ -5,11 +5,10 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class MecanumDrive {
     public void init(HardwareMap hwMap) {
-        FLm = hwMap.get(DcMotor.class, "FLM"); // replace the variable inside the speech marks into the exact name og the motor name in the driver hub
-        BLm = hwMap.get(DcMotor.class, "BLM"); // replace the variable inside the speech marks into the exact name og the motor name in the driver hub
-        FRm = hwMap.get(DcMotor.class, "FRM"); // replace the variable inside the speech marks into the exact name og the motor name in the driver hub
-        BRm = hwMap.get(DcMotor.class, "BRM"); // replace the variable inside the speech marks into the exact name og the motor name in the driver hub
-
+        FLm = hwMap.get(DcMotor.class, "FLM");
+        BLm = hwMap.get(DcMotor.class, "BLM");
+        FRm = hwMap.get(DcMotor.class, "FRM");
+        BRm = hwMap.get(DcMotor.class, "BRM");
         FLm.setDirection(DcMotor.Direction.REVERSE);
         BLm.setDirection(DcMotor.Direction.REVERSE);
 
@@ -18,9 +17,7 @@ public class MecanumDrive {
         FRm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         BRm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
-
     private DcMotor FLm, BLm, FRm, BRm;
-
     public void drive(double forward, double strafe, double rotate) {
         double FLmPow = forward + strafe + rotate;
         double BLmPow = forward - strafe + rotate;
@@ -36,8 +33,8 @@ public class MecanumDrive {
         maxPower = Math.max(maxPower, Math.abs(BRmPow));
 
         FLm.setPower(maxSpeed * (FLmPow / maxPower));
-        BLm.setPower(maxSpeed * (FLmPow / maxPower));
-        FRm.setPower(maxSpeed * (FLmPow / maxPower));
-        BRm.setPower(maxSpeed * (FLmPow / maxPower));
+        BLm.setPower(maxSpeed * (BLmPow / maxPower));
+        FRm.setPower(maxSpeed * (FRmPow / maxPower));
+        BRm.setPower(maxSpeed * (BRmPow / maxPower));
     }
 }
