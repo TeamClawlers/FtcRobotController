@@ -12,9 +12,11 @@ public class MecanumDriveOpMode extends OpMode {
     Intake intake = new Intake();
     double clockwise, forward, strafe, rotate;
 
+
     @Override
     public void init() {
         drive.init(hardwareMap);
+        intake.init(hardwareMap);
     }
 
     @Override
