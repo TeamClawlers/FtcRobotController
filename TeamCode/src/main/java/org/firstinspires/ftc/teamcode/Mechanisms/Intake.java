@@ -14,4 +14,4 @@ public class Intake {
         INm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
     }
-}
+} 
