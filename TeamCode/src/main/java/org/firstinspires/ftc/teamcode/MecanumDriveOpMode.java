@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
+import org.firstinspires.ftc.teamcode.Mechanisms.Flywheel;
 import org.firstinspires.ftc.teamcode.Mechanisms.Intake;
 import org.firstinspires.ftc.teamcode.Mechanisms.MecanumDrive;
 
@@ -10,6 +11,7 @@ import org.firstinspires.ftc.teamcode.Mechanisms.MecanumDrive;
 public class MecanumDriveOpMode extends OpMode {
     MecanumDrive drive = new MecanumDrive();
     Intake intake = new Intake();
+    Flywheel flywheel = new Flywheel();
     double clockwise, forward, strafe, rotate;
 
 
