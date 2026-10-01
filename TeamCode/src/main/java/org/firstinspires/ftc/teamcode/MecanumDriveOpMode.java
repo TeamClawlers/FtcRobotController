@@ -12,8 +12,7 @@ public class MecanumDriveOpMode extends OpMode {
     MecanumDrive drive = new MecanumDrive();
     Intake intake = new Intake();
     Flywheel flywheel = new Flywheel();
-    double rotatefly, clockwise, forward, strafe, rotate;
-
+    double spin, clockwise, forward, strafe, rotate;
 
     @Override
     public void init() {
@@ -28,10 +27,10 @@ public class MecanumDriveOpMode extends OpMode {
         strafe = gamepad1.left_stick_x;
         rotate = gamepad1.right_stick_x;
         clockwise = gamepad2.left_stick_y;
-        rotatefly = gamepad2.right_stick_y;
+        spin = gamepad2.right_stick_y;
 
         intake.intake(clockwise);
-        flywheel.flywheel(rotatefly);
+        flywheel.flywheel(spin);
         drive.drive(forward,strafe,rotate);
     }
 }

@@ -8,8 +8,8 @@ public class Flywheel {
         Flym = hwMap.get(DcMotor.class, "Flym");
     }
     private DcMotor Flym;
-    public void flywheel(double rotatefly) {
-        double FlymPow = rotatefly;
+    public void flywheel(double spin) {
+        double FlymPow = spin;
 
         double maxPower = 1.0;
         double maxSpeed = 1.0;
