@@ -31,6 +31,7 @@ public class MecanumDriveOpMode extends OpMode {
         rotatefly = gamepad2.right_stick_y;
 
         intake.intake(clockwise);
+        flywheel.flywheel(rotatefly);
         drive.drive(forward,strafe,rotate);
     }
 }
