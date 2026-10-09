@@ -26,8 +26,8 @@ public class MecanumDriveOpMode extends OpMode {
         forward = -1*(gamepad1.left_stick_y);
         strafe = gamepad1.left_stick_x;
         rotate = gamepad1.right_stick_x;
-        clockwise = gamepad2.left_stick_y;
-        spin = gamepad2.right_stick_y;
+        clockwise = gamepad1.right_trigger;
+        spin = gamepad1.left_trigger;
 
         intake.intake(clockwise);
         flywheel.flywheel(spin);
