@@ -29,6 +29,11 @@ public class MecanumDriveOpMode extends OpMode {
         rotate = gamepad1.right_stick_x;
         spin = gamepad1.left_trigger;
 
+        // Crawl mode: 'X'
+        if (gamepad1.cross) {
+            drive.setPower(0.5);
+        }
+
         // Button Binding: Hold 'A' to run the intake
         if (gamepad1.dpad_up) {
             intake.setPower(-1.0); // Full speed when held

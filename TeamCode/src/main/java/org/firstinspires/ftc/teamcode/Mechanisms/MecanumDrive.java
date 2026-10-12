@@ -37,4 +37,10 @@ public class MecanumDrive {
         FRm.setPower(maxSpeed * (FRmPow / maxPower));
         BRm.setPower(maxSpeed * (BRmPow / maxPower));
     }
+    public void setPower(double power) {
+        FLm.setPower(power);
+        BLm.setPower(power);
+        FRm.setPower(power);
+        BRm.setPower(power);
+    }
 }
