@@ -4,18 +4,15 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class Intake {
+    private DcMotor INm;
+
+    // 1. Initialize the motor
     public void init(HardwareMap hwMap) {
         INm = hwMap.get(DcMotor.class, "INm");
     }
-    private DcMotor INm;
-    public void intake(double clockwise) {
-        double INmPow = clockwise;
 
-        double maxPower = 1.0;
-        double maxSpeed = 1.0;
-
-        maxPower = Math.max(maxPower, Math.abs(INmPow));
-
-        INm.setPower(maxSpeed * (INmPow / maxPower));
+    // 2. Method to set the motor power
+    public void setPower(double power) {
+        INm.setPower(power);
     }
 }
