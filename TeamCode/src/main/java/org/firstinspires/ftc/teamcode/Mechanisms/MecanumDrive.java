@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode.Mechanisms;
 
+import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.gamepad1;
+
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
@@ -38,9 +40,18 @@ public class MecanumDrive {
         BRm.setPower(maxSpeed * (BRmPow / maxPower));
     }
     public void setPower(double power) {
-        FLm.setPower(power);
-        BLm.setPower(power);
-        FRm.setPower(power);
-        BRm.setPower(power);
+        // Crawl mode: 'X'
+        if (gamepad1.cross) {
+            FLm.setPower(0.4*power);
+            BLm.setPower(0.4*power);
+            FRm.setPower(0.4*power);
+            BRm.setPower(0.4*power);
+        }
+        else {
+            FLm.setPower(power);
+            BLm.setPower(power);
+            FRm.setPower(power);
+            BRm.setPower(power);
+        }
     }
 }
