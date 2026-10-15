@@ -8,6 +8,7 @@ public class Flywheel {
         Flym = hwMap.get(DcMotor.class, "Flym");
     }
     private DcMotor Flym;
+    private DcMotor Flym2;
     public void flywheel(double spin) {
         double FlymPow = spin;
 
@@ -17,5 +18,6 @@ public class Flywheel {
         maxPower = Math.max(maxPower, Math.abs(FlymPow));
 
         Flym.setPower(maxSpeed * (FlymPow / maxPower));
+        Flym2.setPower(maxSpeed * (FlymPow / maxPower));
     }
 }

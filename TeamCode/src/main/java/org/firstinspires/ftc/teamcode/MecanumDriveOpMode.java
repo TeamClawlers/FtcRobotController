@@ -27,12 +27,12 @@ public class MecanumDriveOpMode extends OpMode {
         forward = -1 * (gamepad1.left_stick_y);
         strafe = gamepad1.left_stick_x;
         rotate = gamepad1.right_stick_x;
-        spin = gamepad1.left_trigger;
+        spin = gamepad2.left_trigger;
 
         // Button Binding: Hold 'A' to run the intake
-        if (gamepad1.dpad_up) {
+        if (gamepad2.dpad_up) {
             intake.setPower(-1.0); // Full speed when held
-        } else if (gamepad1.dpad_down) {
+        } else if (gamepad2.dpad_down) {
             intake.setPower(1.0); // Full speed when held
         } else {
             intake.setPower(0.0); // Stop when released
